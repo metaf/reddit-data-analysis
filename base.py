@@ -3,6 +3,7 @@ import os.path
 import sys
 #Use sys.stdin.  Look into raw_input() if this seems slow.
 import json
+INPUT_FILENAME=sys.argv[1]
 
 def getComments():
 	for line in sys.stdin:
