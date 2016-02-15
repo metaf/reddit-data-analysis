@@ -1,10 +1,12 @@
 import os
 import os.path
 import base
+import pprint
+pp=pprint.PrettyPrinter(indent=4)
 
-with open(os.path.join(os.path.expanduser('~'),"test",base.INPUT_FILENAME+".out"),"w") as f:
-	f.write("INPUT: " + base.INPUT_FILENAME)
+with open(base.OUTPUT_FILE,"w") as f:
 	for comment in base.getComments():
-		f.write(str(comment))
+                pp.print(comment,stream=f)
+		#f.write(str(comment))
 #This is of course, broken.  Each process is going to trample objprint.out.  They need their own output files
 	
