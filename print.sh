@@ -7,8 +7,6 @@ map="python /mnt/tferrell/reddit-data-analysis/printComments.py $WORKDIR"
 #it simply pretty prints the comment data
 
 
-reduce(){
 
-}
 
 $MY_DIR/reddit_map.sh $map $DATADIR/2007/*.bz2
