@@ -9,4 +9,4 @@ map="\"python /mnt/tferrell/reddit-data-analysis/printComments.py $WORKDIR\""
 
 
 
-$MY_DIR/bz_multi_pipe.sh $map $DATADIR/2007/*.bz2
+$MY_DIR/bz_multi_pipe.sh "$map" $DATADIR/2007/*.bz2
