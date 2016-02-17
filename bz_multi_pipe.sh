@@ -16,13 +16,32 @@ processOne() {
 
 export -f processOne
 export BZIP_FILE_DIR
-export TRACKING_DIR
 export WAT_DO
 
+DEBUG="false"
+while getopts ":d" opt; do
+	case $opt in
+		d)
+			echo "using debug mode"
+			debug="true"
+			;;
+		\?)
+			echo "invalid option!"
+			exit 1
+			;;
+	esac
+done
+shift $((OPTIND-1))
 WAT_DO=$1
 shift
 
-parallel processOne ::: $@
+if [ DEBUG = "false" ]; then
+	parallel processOne ::: $@
+else #DEBUG MODE
+	for f in $@; do
+		processOne $f
+	done
+fi
 
 #TODO: Add some basic by-file checkpointing.  If a file fails, try again
 
