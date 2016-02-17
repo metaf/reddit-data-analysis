@@ -23,7 +23,7 @@ while getopts ":d" opt; do
 	case $opt in
 		d)
 			echo "using debug mode"
-			debug="true"
+			DEBUG="true"
 			;;
 		\?)
 			echo "invalid option!"
@@ -35,7 +35,7 @@ shift $((OPTIND-1))
 WAT_DO=$1
 shift
 
-if [ DEBUG = "false" ]; then
+if [ $DEBUG = "false" ]; then
 	parallel processOne ::: $@
 else #DEBUG MODE
 	for f in $@; do
