@@ -29,8 +29,8 @@ for comment in base.getComments():
 
 
 with open(base.OUTPUT_FILE, "w") as f:
-    f.write(str(noflair_count + flair_count))
-    f.write(str(flair_count))
-    f.write(str(noflair_count))
-    f.write(str(flair_average))
-    f.write(str(noflair_average))
+    f.write(str(noflair_count + flair_count) + "\n")
+    f.write(str(flair_count) + "\n")
+    f.write(str(noflair_count) + "\n")
+    f.write(str(flair_average) + "\n")
+    f.write(str(noflair_average) + "\n")
